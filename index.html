@@ -1,0 +1,52 @@
+<html>
+<head>
+    <link rel="stylesheet" href="jquery.confirm.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.activity-indicator-1.0.0.js"></script>
+    <script type="text/javascript" src="jquery.confirm.js"></script>
+</head>
+<body>
+    <script>
+        function do_status(){
+            $.confirm.status({
+                'title' : 'Processing',
+                'message' : 'Please wait for a while...'
+            });
+        }
+
+        function do_alert(){
+            $.confirm.alert({
+                'title' : 'Completed',
+                'message' : 'Transaction has been finished.',
+                'color' : '#888888',
+                'button_label' : 'Close'
+            });
+        }
+
+        function do_confirm(){
+            $.confirm({
+                'title' : 'Deleting "object"',
+                'message' : 'Are you sure?',
+                'button_yes_label' : 'Yes',
+                'button_no_label' : 'No',
+                'processing_title' : 'Processing',
+                'processing_message' : 'Please wait for a while...',
+                'action' : function(){
+                    alert('add delete process here');
+                }
+            });
+        }
+    </script>
+    <div id="container">
+        <div>
+            <button type="submit" onclick="do_status()">status</button>
+        </div>
+        <div>
+            <button type="submit" onclick="do_alert()">alert</button>
+        </div>
+        <div>
+            <button type="submit" onclick="do_confirm()">confirm</button>
+        </div>
+    </div>
+</body>
+</html>
